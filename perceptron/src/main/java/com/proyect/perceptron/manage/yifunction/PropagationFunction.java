@@ -9,7 +9,7 @@ import com.proyect.perceptron.domain.Row;
 import com.proyect.perceptron.domain.Umbral;
 import com.proyect.perceptron.domain.WeightFactory;
 
-public class PropagationFunction implements YIFunction{
+class PropagationFunction implements YIFunction{
 	
 	private IWeightContainer weightContainer = WeightFactory.getWeightContainer();
 	

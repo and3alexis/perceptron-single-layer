@@ -6,7 +6,7 @@ import com.proyect.perceptron.domain.Row;
 import com.proyect.perceptron.manage.perceptron.core.TrainingFactory;
 import com.proyect.perceptron.manage.perceptron.core.ITrainingStrategy;
 
-public class PerceptronCicle implements ICicle{
+class PerceptronCicle implements ICicle{
 	
 	private ITrainingStrategy perceptronCore = TrainingFactory.getInstance().getITrainingStrategy();
 	

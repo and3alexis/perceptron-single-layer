@@ -1,6 +1,6 @@
 package com.proyect.perceptron.manage.weight.update;
 
-public class ContextIUpdateStrategy implements IUpdateStrategy{
+class ContextIUpdateStrategy implements IUpdateStrategy{
 	
 	private IUpdate strategy;
 

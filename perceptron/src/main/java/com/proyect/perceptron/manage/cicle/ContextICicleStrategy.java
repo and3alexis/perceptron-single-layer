@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.proyect.perceptron.domain.Row;
 
-public class ContextICicleStrategy implements ICicleStrategy{
+class ContextICicleStrategy implements ICicleStrategy{
 	
 	private ICicle strategy;
 

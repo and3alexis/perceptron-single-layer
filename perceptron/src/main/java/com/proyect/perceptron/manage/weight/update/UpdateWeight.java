@@ -3,7 +3,7 @@ package com.proyect.perceptron.manage.weight.update;
 import com.proyect.perceptron.domain.IWeightContainer;
 import com.proyect.perceptron.domain.WeightFactory;
 
-public class UpdateWeight implements IUpdate{
+class UpdateWeight implements IUpdate{
 	
 	private IWeightContainer weightContainer = WeightFactory.getWeightContainer();
 	

@@ -6,7 +6,7 @@ import com.proyect.perceptron.domain.Output;
 import com.proyect.perceptron.domain.WeightFactory;
 import com.proyect.perceptron.manage.Constants;
 
-public class WeightRecalculatorImpl implements IWeightRecalculator {
+class WeightRecalculatorImpl implements IWeightRecalculator {
 	
 	private IWeightContainer weightContainer = WeightFactory.getWeightContainer();
 	

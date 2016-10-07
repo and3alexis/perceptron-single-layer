@@ -2,7 +2,7 @@ package com.proyect.perceptron.manage.perceptron.core;
 
 import com.proyect.perceptron.domain.Row;
 
-public class ContextITrainingStrategy implements ITrainingStrategy{
+class ContextITrainingStrategy implements ITrainingStrategy{
 
 	private ITraining strategy;
 	

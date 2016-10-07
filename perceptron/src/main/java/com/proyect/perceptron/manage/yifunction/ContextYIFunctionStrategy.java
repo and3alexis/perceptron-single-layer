@@ -2,7 +2,7 @@ package com.proyect.perceptron.manage.yifunction;
 
 import com.proyect.perceptron.domain.Row;
 
-public class ContextYIFunctionStrategy implements YIFunctionStrategy{
+class ContextYIFunctionStrategy implements YIFunctionStrategy{
 	
 	private YIFunction strategy;
 	

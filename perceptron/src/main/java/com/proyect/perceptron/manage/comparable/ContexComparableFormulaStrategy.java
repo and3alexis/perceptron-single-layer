@@ -1,6 +1,6 @@
 package com.proyect.perceptron.manage.comparable;
 
-public class ContexComparableFormulaStrategy implements ComparableFormulaStrategy{
+class ContexComparableFormulaStrategy implements ComparableFormulaStrategy{
 	
 	private ComparableFormula strategy;
 	

@@ -14,7 +14,7 @@ import com.proyect.perceptron.manage.weight.update.IUpdateStrategy;
 import com.proyect.perceptron.manage.yifunction.YIFunctionFactory;
 import com.proyect.perceptron.manage.yifunction.YIFunctionStrategy;
 
-public class PerceptronCore implements ITraining{
+class PerceptronCore implements ITraining{
 	
 	private YIFunctionStrategy yiFunctionStrategy = YIFunctionFactory.getInstance().getYIFunctionStrategy();
 	private ComparableFormulaStrategy comparableFormulaStrategy = ComparableFormulaFactory.getInstance().getComparableFormulaStrategy();
