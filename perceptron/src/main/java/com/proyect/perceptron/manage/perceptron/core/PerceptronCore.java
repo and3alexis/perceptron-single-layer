@@ -18,7 +18,7 @@ class PerceptronCore implements ITraining{
 	
 	private YIFunctionStrategy yiFunctionStrategy = YIFunctionFactory.getInstance().getYIFunctionStrategy();
 	private ComparableFormulaStrategy comparableFormulaStrategy = ComparableFormulaFactory.getInstance().getComparableFormulaStrategy();
-	private IWeightRecalculatorStrategy asadStrategy = WeightRecalculatorFactory.getInstance().getASADStrategy();
+	private IWeightRecalculatorStrategy weightRecalculatorStrategy = WeightRecalculatorFactory.getInstance().getASADStrategy();
 	private IUpdateStrategy iUpdateStrategy = UpdateFactory.getInstance().getIUpdateStrategy();
 
 	public boolean learning(Row row){
@@ -26,27 +26,26 @@ class PerceptronCore implements ITraining{
 		return isCorrectOutput(neuronOutput, row);
 	}
 	
-	private void updateWeights(List<Input> inputList, double neuronOutput, Output output){
-		if(inputList != null && !inputList.isEmpty()){
-			for (Input input : inputList) {
-				double weight = asadStrategy.calculate(input, neuronOutput, output);
-				iUpdateStrategy.eject(input.getPostion(), weight);
-			}
-		}
-	}
-	
 	private double getHardLimit(Row row){
-		return yiFunctionStrategy.calculate(row);
+		return this.yiFunctionStrategy.calculate(row);
 	}
 	
 	private boolean isCorrectOutput(double neuronOutput, Row row){
-		if(!comparableFormulaStrategy.calculate(neuronOutput, row.getOutput().getValue())){
+		if(!this.comparableFormulaStrategy.calculate(neuronOutput, row.getOutput().getValue())){
 			List<Input> inputList = row.getInputList();
 			updateWeights(inputList, neuronOutput, row.getOutput());
 			return false;
 		}
-		
 		return true;
+	}
+	
+	private void updateWeights(List<Input> inputList, double neuronOutput, Output output){
+		if(inputList != null && !inputList.isEmpty()){
+			for (Input input : inputList) {
+				double weight = this.weightRecalculatorStrategy.calculate(input, neuronOutput, output);
+				this.iUpdateStrategy.eject(input.getPostion(), weight);
+			}
+		}
 	}
 
 }
